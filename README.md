@@ -1,5 +1,24 @@
 # Arduino-GarageDoorOpener
-Arduino project that uses a Wiegand keypad to work as a garage door opener.  
+Arduino project that uses a Wiegand keypad to work as a garage door opener. 
+
+# Instructions
+
+## Add Passcode
+Short pressing the input button will enter passcode entry.  The LED will flash green - you'll have 15 seconds to input a passcode of up to 8 digits.  Then press the "#" to confirm.
+
+## Erase All Passcodes
+Long pressing the input button (5 seconds) will trigger a memory wipe and erase all stored passcodes.
+
+## Opening The Door
+1) Enter the passcode
+2) Press the "#" key
+
+It the passcode is valid, the LED will flash indicating you're in door selection mode
+
+3) Press either 1, 2, or 3 button 
+4) Press the "#" key
+
+
 
 
 # Schematic
