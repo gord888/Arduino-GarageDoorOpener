@@ -1,6 +1,16 @@
 # Arduino-GarageDoorOpener
-Arduino project that uses a Wiegand keypad to work as a garage door opener.  More details to follow.
+Arduino project that uses a Wiegand keypad to work as a garage door opener.  
 
+
+# Schematic
+The schematic below shows the main circuitry.  The Arduino Nano accepts 12v in Vin, and the 5v output is used to power the relays and the garage door remote.
+
+Note: 
+Not shown on the schematic is the Wiegand keypad wireup:
+- Wiegand D0 (usually green) => Arduino D2
+- Wiegand D1 (usually white) => Arduino D3
+
+![schematic](./images/schematic.png)
 
 
 # Wiring Notes:
