@@ -1,5 +1,5 @@
 # Arduino-GarageDoorOpener
-Arduino project that uses a Wiegand keypad to work as a garage door opener. The purpose of this project is to replace the rubbish LiftMaster keypad with something more durable and robust.
+Arduino project that uses a Wiegand keypad to work as a garage door opener. The purpose of this project is to replace the LiftMaster keypad with something more durable and robust.
 
 <br/>
 **REPLACE THIS:**  <img src="./images/original.jpg" alt="arduino" width="25%" height="25%"> 
@@ -7,6 +7,19 @@ Arduino project that uses a Wiegand keypad to work as a garage door opener. The 
 <br/>
 **WITH THIS:**  <img src="./images/weigand_keypad.jpg" alt="arduino" width="25%" height="25%"> 
 <br/>
+
+
+If you're wondering why I chose to do this, there are a few motivations:
+1) The LiftMaster keypads won't last more than a couple years at my home before wearing out
+2) The LiftMaster is very expensive for something so simple
+
+If you're also wondering why you couldn't just use the keypad directly to the garage door opener - technically you can.  But if someone were to pry the keypad off the base, they'd only have to short two of the wires to open your garage door.  Putting an Arduino in between means that the attacker would need more complex protocols (a wiegand emulator) to brute force the arduino.  Failed keypad entry delays of 3 seconds should mitigate some of the risk.  
+
+# Future enhancements
+Future features to be put in:
+1) open door detection
+2) "*" to close
+3) Google Assistant support
 
 
 # Instructions
