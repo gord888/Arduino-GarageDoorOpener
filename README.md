@@ -66,6 +66,7 @@ Basic assembly is basically a few main parts:
 
 ## Through-hold Board with Arduino
 Basically you're looking to get your Arduino board soldered to the through-hole board (with sockets - not directly) along with some wires so you can hook into the relays and keypad.  See images below.
+<br/>
 <img src="./images/arduino_LI.jpg" alt="arduino" width="50%" height="50%">
 
 ## Garage Door Wireup
@@ -73,9 +74,24 @@ As stated earlier, newer garage door openers don't have two pins on the main uni
 
 1) Add wire to the buttons so we can hook it up to the relays
 2) Add wire to the solder points where the battery normally goes.  We'll use the +5v from the arduino to power it rather use batteries
-
+<br/>
 <img src="./images/garage_door_remote_annotated.jpg" alt="arduino" width="50%" height="50%">
+<br/>
+## Connecting It All Together
+This is the easy part - while the picture is messy, i assure you, it's not all that bad.
+Garage door remote
+- connect to arduino +5v
+- connect to relays
 
+Relays
+- connect to arduino
+
+Weigand Keypad
+- connect to power
+- connect to arduino
+
+<br/>
+<img src="./images/all_wired.jpg" alt="arduino" width="50%" height="50%">
 
 
 
