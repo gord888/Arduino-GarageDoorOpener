@@ -25,9 +25,7 @@ It the passcode is valid, the LED will flash indicating you're in door selection
 The schematic below shows the main circuitry.  The Arduino Nano accepts 12v in Vin, and the 5v output is used to power the relays and the garage door remote.
 
 Note: 
-Not shown on the schematic is the Wiegand keypad wireup:
-- Wiegand D0 (usually green) => Arduino D2
-- Wiegand D1 (usually white) => Arduino D3
+Not shown on the schematic is that you need power to the relays.  I purchased 5v relays, so the +5v was drawn from the Arduino +5v.  There are 12v relays available too, in which case you'll draw power from the 12v power supply.
 
 ![schematic](./images/schematic.png)
 
