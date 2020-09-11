@@ -56,4 +56,31 @@ This code has not been tested with RFID tags. The wiegand device I used supports
 Heavily inspired by Jason Hamilton.  I heavily modified the keyMemory.h to make it a little easiler to use.  You can find his work here: https://bitbucket.org/jason955/arduino-access-control/src/master/
 
 
+# Assembly
+Basic assembly is basically a few main parts:
+1) Through hole board with Arduino, LEDs, button, and buzzer
+2) Garage door remote wireup
+3) Connecting everything together
+
+
+
+## Through-hold Board with Arduino
+Basically you're looking to get your Arduino board soldered to the through-hole board (with sockets - not directly) along with some wires so you can hook into the relays and keypad.  See images below.
+<img src="./images/arduino_LI.jpg" alt="arduino" width="50%" height="50%">
+
+## Garage Door Wireup
+As stated earlier, newer garage door openers don't have two pins on the main unit to short to trigger the garage door to open.  With no easy access, you'll have to sacrifice a garage door remote to make it work.  The unit i used was from LiftMaster and is designed to be used in your car.  Opening up the casing and you'll see a very simple mainboard - we'll use relays to act as button presses.  
+
+1) Add wire to the buttons so we can hook it up to the relays
+2) Add wire to the solder points where the battery normally goes.  We'll use the +5v from the arduino to power it rather use batteries
+
+<img src="./images/garage_door_remote_annotated.jpg" alt="arduino" width="50%" height="50%">
+
+
+
+
+
+
+
+
 
