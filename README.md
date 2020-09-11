@@ -43,6 +43,8 @@ Moment Switch | x1 | used to add or clear codes
 12v power supply | x1 | main power source for Wiegand keypad and arduino.  A cheap $10-15 ac adapter with 12v @ 2A should be more than enough. 
 Wiegand keypad | x1 | I used the Retekess H1EM-W 
 Garage door remote | x1 | if your garage door opener is a newer one, you can't directly trigger the garage door open/close on the main unit.  I've tied it into the garage door remote instead.
+Through-hole board | x1 | mine were approx 2"x3"
+Wiring | x | I cut and used Cat 5 network cable.  Those wires generally work well
 
 # Code Notes
 ## Max Passcode Length
