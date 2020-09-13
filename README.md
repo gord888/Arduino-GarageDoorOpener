@@ -20,7 +20,6 @@ You could just use the Wiegand keypad directly to the garage door opener - but i
 # Future enhancements
 Future features to be put in (not in any particular order)
 - open door detection
-- "*" to close
 - Google Assistant support
 - Increased delays on failed passcodes.
 
@@ -42,7 +41,10 @@ It the passcode is valid, the LED will flash indicating you're in door selection
 3) Press either 1, 2, or 3 button 
 4) Press the "#" key
 
-
+## Closing Doors
+If you've wired in a LiftMaster keypad enter button to relay 4 - then you can trigger a door close:
+1) Press "*" key
+2) Press the "#" key
 
 
 # Schematic
@@ -118,6 +120,13 @@ Weigand Keypad
 
 <br/>
 <img src="./images/all_wired.jpg" alt="arduino" width="50%" height="50%">
+
+## New - Door Close Feature
+I still had a working LiftMaster keypad.  The "enter" button acts as a door close feature.  The main unit knows that pressing the "enter" button will only close doors if they are open.  Having this feature is easier than having to punch in the full code to close the door.
+
+To use this capability:
+- D12 of the Arduino output needs to output to relay 4
+- the "enter" button on the keypad needs to be shorted by relay 4.  
 
 
 
