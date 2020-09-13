@@ -32,6 +32,7 @@
 #define DOOR1 9
 #define DOOR2 10
 #define DOOR3 11
+#define DOORCLOSE 12
 
 // buzzer pin
 #define BUZZER 4
@@ -115,6 +116,7 @@ void setup() {
   pinMode(DOOR1, OUTPUT);
   pinMode(DOOR2, OUTPUT);
   pinMode(DOOR3, OUTPUT);
+  pinMode(DOORCLOSE, OUTPUT);
 
   pinMode(BUZZER, OUTPUT);
 
@@ -255,24 +257,39 @@ void coreLogic()
 
   // only perform main logic if there's at least 1 key entered
   if (currentDigit > 0) {
-
-
     
     if (keypadMode == 0) // passcode mode
     {
-      boolean keyPresent = key_storage.isKeyPresent(passcode);
 
-      // if we find the key, then switch to door mode
-      if (keyPresent)
+
+
+      // check if only the * was pushed, then activate DOORCLOSE
+      if(currentDigit == 1 && passcode[0] == 10)
       {
-        Serial.println("Code found - switching to door selection mode.");
-        keypadMode = 2;
-        keypadModeEnd = millis() + 5000; //end after 5 seconds
-      } else {
-        Serial.println("CODE NOT FOUND!");
-        digitalWrite(REDLED, HIGH);
-        blinkOnce(BUZZER, 2000);
-        digitalWrite(REDLED, LOW);
+        // hit door close
+        blinkOnce(DOORCLOSE, 1500);
+
+        // blink and beep
+        digitalWrite(BLUELED, HIGH);
+        blinkOnce(BUZZER, 500);
+        digitalWrite(BLUELED, LOW);
+      } 
+      else
+      {
+        boolean keyPresent = key_storage.isKeyPresent(passcode);
+  
+        // if we find the key, then switch to door mode
+        if (keyPresent)
+        {
+          Serial.println("Code found - switching to door selection mode.");
+          keypadMode = 2;
+          keypadModeEnd = millis() + 5000; //end after 5 seconds
+        } else {
+          Serial.println("CODE NOT FOUND!");
+          digitalWrite(REDLED, HIGH);
+          blinkOnce(BUZZER, 2000);
+          digitalWrite(REDLED, LOW);
+        }
       }
     }
 
